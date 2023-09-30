@@ -2,6 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
+    "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
@@ -14,17 +15,18 @@
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
-    "outDir": "./dist",
+    "outDir": "dist",
     "resolveJsonModule": true,
-    "rootDir": "./src",
     "skipLibCheck": true,
     "strict": true,
-    "target": "ESNext"
+    "target": "es2018"
   },
-  "exclude": [
-    "node_modules"
+  "files": [
+    "hardhat.config.tsx"
   ],
   "include": [
-    "src/**/*.ts"
+    "./tasks",
+    "./test",
+    "./typechain"
   ]
 }

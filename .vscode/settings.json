@@ -1,0 +1,6 @@
+{
+    "solidity.compileUsingLocalVersion": "/Users/sophie/Desktop/Simple-Dapp-with-Hardhat/soljson-v0.8.19+commit.7dd6d404.js",
+    "solidity.defaultCompiler": "localNodeModule",
+    "solidity.packageDefaultDependenciesContractsDirectory": "",
+    "solidity.packageDefaultDependenciesDirectory": "node_modules"
+}
