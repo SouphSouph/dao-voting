@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "declaration": true,
     "esModuleInterop": true,
     "module": "esnext",
     "outDir": "dist",
@@ -22,11 +21,13 @@
     "jsx": "preserve"
   },
   "files": [
-    "./hardhat.config.ts"
+    "./hardhat.config.ts",
+    "./helper-hardhat-config.ts"
   ],
   "include": [
-    "./tasks",
+    "./scripts",
     "./test",
-    "./typechain"
+    "./deploy",
+    "./deploy-helpers"
   ]
 }

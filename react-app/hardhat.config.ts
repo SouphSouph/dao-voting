@@ -1,34 +1,41 @@
-/*
-import { task } from "hardhat/config";
-import hre from "hardhat";
-
-// This is a sample Hardhat task. To learn how to create your own go to
-// https://hardhat.org/guides/create-task.html
-
-task("accounts", "Prints the list of accounts", async (_, hre) => {
-  const accounts = await hre.ethers.getSigners();
-
-  for (const account of accounts) {
-    console.log(account.address);
-  }
-});
-
-// You need to export an object to set up your config
-// Go to https://hardhat.org/config/ to learn more
-
+import "hardhat-deploy"
+import "@nomiclabs/hardhat-ethers"
+import "@typechain/hardhat"
 import { HardhatUserConfig } from 'hardhat/config';
+require("@nomiclabs/hardhat-waffle");
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.4",
+  solidity: {
+    version:"0.8.18",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 1000,
+      },
+    },
+  },
+  
   paths: {
     artifacts: './src/artifacts',
   },
   networks: {
     hardhat: {
-      chainId: 1337,
+      chainId: 31337,
+      gas: 2100000,
+      gasPrice: 8000000000   
     },
+    localhost:{
+      chainId: 31337,
+      gas: 2100000,
+      gasPrice: 8000000000   
+    }
+  },
+  namedAccounts:{
+    deployer:{
+      default:0,
+    }
   },
 };
 
+
 export default config;
-*/

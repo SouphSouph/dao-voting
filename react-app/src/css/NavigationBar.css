@@ -1,0 +1,32 @@
+/* NavigationBar.css */
+
+nav {
+    background-color:  #151516; /* Set the grey background color for the navigation bar */
+    padding: 10px 0; /* Add some vertical padding for the navigation bar */
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin-right: 20px; /* Adjust the spacing between navigation items */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #a4a2a2; /* Set the default color for navigation links */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Add a smooth color transition effect */
+}
+
+.nav-link:hover {
+    color: #007bff; /* Change the color on hover */
+}
+
+.active {
+    color: #28a745; /* Set the color for active navigation link */
+}
