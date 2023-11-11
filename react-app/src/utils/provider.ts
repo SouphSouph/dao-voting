@@ -1,10 +1,19 @@
-import type { Web3Provider as ProviderType } from '@ethersproject/providers';
-import { Web3Provider } from '@ethersproject/providers';
+import Web3 from 'web3';
 
-export function getProvider(provider: any): ProviderType {
-  const web3Provider = new Web3Provider(provider);
-  web3Provider.pollingInterval = 1000;
-  return web3Provider;
+declare global {
+  interface Window {
+    ethereum: any;
+  }
 }
 
-export type Provider = ProviderType;
+export function getProvider(): Web3 {
+  if (window.ethereum) {
+    const web3Provider = new Web3(window.ethereum);
+    return web3Provider;
+  } else {
+    // Handle the case when MetaMask or another Ethereum provider is not available
+    throw new Error('Ethereum provider not found');
+  }
+}
+
+export type Provider = Web3;

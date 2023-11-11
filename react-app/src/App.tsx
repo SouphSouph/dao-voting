@@ -1,13 +1,24 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import UserInformations from './Components/UserInformations'; // Import your UserInformations component
-import NavigationBar from './Components/NavigationBar'
+import ConnexionMetamask from './Components/ConnexionMetamask'; // Import your UserInformations component
+import NavBar from './Components/NavigationBar'
+import React from 'react';
+import { MakeAProposition } from './Components/MakeAProposition';
+import { VoteAProposition } from './Components/VoteAProposition';
+
+/*
+   - Page with account informations
+   - Page to make a voting proposition: the one proposing the vote can't vote. Add space to interact (comments)
+   - Page to see the voting propositions
+   - Optional : page to see the moving blockchain (for each voting proposition associate blockchain can be graphicaly represented)
+*/
 const App = () => {
   return (
      <>
-      <NavigationBar/>
+      <NavBar/>
         <Routes>
-           <Route path="/" element={<UserInformations/>} />
+           <Route path="/home" element={<ConnexionMetamask/>} />
+           <Route path="/proposition" element={<MakeAProposition/>} />
+           <Route path="/vote" element={<VoteAProposition/>} />
         </Routes>
      </>
   );

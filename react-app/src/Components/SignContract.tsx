@@ -1,12 +1,17 @@
 import { ReactElement } from "react";
 import { useWeb3React } from '@web3-react/core';
-import { Provider } from '../utils/provider';
+import { Provider, getProvider } from '../utils/provider';
+import React from 'react';
 
 export function SignContract(): ReactElement{
-    const context = useWeb3React<Provider>()
-
+    async function handlesigner(){
+        const provider = getProvider()
+        const signer = provider.getSigner().signMessage("Hello ! Message signed !")
+        window.alert("Success")
+    }
     return(
         <>
+        <button onClick={handlesigner}/>
         </>
     )
 

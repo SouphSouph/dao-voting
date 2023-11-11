@@ -1,19 +1,36 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import '../css/NavigationBar.css'; // Import your CSS file for NavigationBar styles
 
 function NavigationBar() {
     return (
         <div>
             <nav>
-                <ul style={{ display: 'flex' }}>
+                <ul className="nav-list">
+                <li className="nav-item">
                     <NavLink
-                        to="/"
-                        className={({ isActive, isPending }) =>
-                            isPending ? 'pending' : isActive ? 'active' : ''
-                        }
+                        to="/home"
+                        className="nav-link"
                     >
-                        HOME
+                        Home
                     </NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink
+                        to="/proposition"
+                        className="nav-link"
+                    >
+                        Proposition
+                    </NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink
+                        to="/vote"
+                        className="nav-link"
+                    >
+                        Vote
+                    </NavLink>
+                </li>
                 </ul>
             </nav>
         </div>
